@@ -5,132 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Naffa Verlita</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   </head>
-  <body>
-    <!-- ================= NAVBAR ================= -->
 
+  <body>
+    <!-- NAVBAR -->
     <header>
       <nav class="navbar">
-        <h2 class="logo">Naffa Verlita.</h2>
+        <a href="#home" class="logo">naffa<span>.</span></a>
 
-        <ul class="nav-menu">
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- ================= HOME ================= -->
-
-    <section id="home" class="home">
-      <div class="home-text">
-        <h3>Halo, Saya</h3>
-
-        <h1>Naffa Verlita Nagita Zelfa</h1>
-
-        <h2>Software Engineering Student</h2>
-
-        <p>Saya adalah siswi Rekayasa Perangkat Lunak yang memiliki minat dalam pengembangan website, aplikasi, dan UI/UX Design.</p>
-
-        <a href="#about" class="btn"> Lihat About </a>
-      </div>
-
-      <div class="home-image">
-        <img src="img/zelfaa.jpeg" alt="Profile" />
-      </div>
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="about">
-      <h2 class="section-title">About Me</h2>
-
-      <div class="about-content">
-        <p>
-          Halo! Saya Naffa Verlita, siswi SMK Negeri 5 Malang jurusan Rekayasa Perangkat Lunak. Saya senang belajar HTML, CSS, JavaScript, PHP, MySQL, Bootstrap dan Flutter. Saya selalu berusaha membuat website yang menarik, modern, dan
-          mudah digunakan.
-        </p>
-      </div>
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills" class="skills">
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skill-container">
-        <div class="skill-card">
-          <i class="fa-brands fa-html5"></i>
-          <h3>HTML</h3>
+    <main>
+      <!-- HOME -->
+      <section id="home" class="home">
+        <div class="hero-top">
+          <span>PORTFOLIO — 2026</span>
+          <span>CREATIVE DEVELOPER / STUDENT</span>
         </div>
 
-        <div class="skill-card">
-          <i class="fa-brands fa-css3-alt"></i>
-          <h3>CSS</h3>
+        <div class="hero-content">
+          <div class="home-text">
+            <p class="eyebrow">HELLO, WELCOME TO MY WORLD</p>
+
+            <h1>
+              Meet<br />
+              <span>the creator.</span>
+            </h1>
+
+            <p class="hero-description">Halo, saya Naffa Verlita Nagita Zelfa. Siswi Rekayasa Perangkat Lunak yang tertarik pada dunia teknologi, pemrograman, dan desain digital.</p>
+
+            <a href="#projects" class="btn">
+              Explore My Work
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="home-image">
+            <div class="photo-frame">
+              <img src="img/zlf.jpeg" alt="Foto Naffa" />
+            </div>
+
+            <span class="photo-note">a little piece of me ✳</span>
+            <span class="hero-sticker">CREATIVE<br />MINDS<br />MATTER</span>
+          </div>
         </div>
 
-        <div class="skill-card">
-          <i class="fa-brands fa-js"></i>
-          <h3>JavaScript</h3>
+        <div class="hero-bottom">
+          <span>DESIGN • DEVELOPMENT • CREATIVITY</span>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about">
+        <div class="section-heading">
+          <span class="section-number">01 / ABOUT ME</span>
+          <span class="heading-decoration">✳</span>
         </div>
 
-        <div class="skill-card">
-          <i class="fa-brands fa-php"></i>
-          <h3>PHP</h3>
+        <div class="about-content">
+          <div class="about-title">
+            <p class="eyebrow">A LITTLE INTRODUCTION</p>
+            <h2>Curious mind,<br /><em>creative soul.</em></h2>
+          </div>
+
+          <div class="about-description">
+            <p>Halo! Saya Naffa Verlita, siswi SMK Negeri 5 Malang jurusan Rekayasa Perangkat Lunak.</p>
+
+            <p>Saya senang mempelajari HTML, CSS, JavaScript, PHP, MySQL, Bootstrap, dan Flutter. Saya juga tertarik dengan UI/UX Design dan pengembangan aplikasi.</p>
+
+            <p>Bagi saya, setiap project adalah kesempatan untuk belajar, mencoba hal baru, dan mengembangkan kemampuan.</p>
+
+            <span class="signature">Nice to meet you!</span>
+          </div>
         </div>
 
-        <div class="skill-card">
-          <i class="fa-solid fa-database"></i>
-          <h3>MySQL</h3>
+        <div class="about-bottom">
+          <span>BASED IN MALANG, INDONESIA</span>
+          <span>LEARNING • CREATING • GROWING</span>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="skills">
+        <div class="section-heading">
+          <span class="section-number">02 / MY SKILLS</span>
+          <span class="heading-decoration">✿</span>
         </div>
 
-        <div class="skill-card">
-          <i class="fa-brands fa-bootstrap"></i>
-          <h3>Bootstrap</h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="contact">
-      <h2 class="section-title">Contact</h2>
-
-      <div class="contact-container">
-        <div class="contact-card">
-          <i class="fa-solid fa-envelope"></i>
-          <h3>Email</h3>
-          <a href="mailto:verlitanaffa3@gmail.com"> verlitanaffa3@gmail.com </a>
+        <div class="skills-intro">
+          <p class="eyebrow">TOOLS & TECHNOLOGIES</p>
+          <h2>Things I love<br /><em>to create with.</em></h2>
+          <p>Beberapa teknologi yang saya pelajari dan gunakan dalam proses membuat project.</p>
         </div>
 
-        <div class="contact-card">
-          <i class="fa-brands fa-whatsapp"></i>
-          <h3>WhatsApp</h3>
-          <a href="https://wa.me/6287861520780" target="_blank"> 087861520780 </a>
+        <div class="skill-container">
+          <div class="skill-item">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML</span>
+            <small>01</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-brands fa-css3-alt"></i>
+            <span>CSS</span>
+            <small>02</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-brands fa-js"></i>
+            <span>JavaScript</span>
+            <small>03</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-brands fa-php"></i>
+            <span>PHP</span>
+            <small>04</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-database"></i>
+            <span>MySQL</span>
+            <small>05</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-brands fa-bootstrap"></i>
+            <span>Bootstrap</span>
+            <small>06</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>Flutter</span>
+            <small>07</small>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <span>Figma</span>
+            <small>08</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="projects">
+        <div class="section-heading">
+          <span class="section-number">03 / SELECTED WORKS</span>
+          <span class="heading-decoration">✳</span>
         </div>
 
-        <div class="contact-card">
-          <i class="fa-brands fa-instagram"></i>
-          <h3>Instagram</h3>
-          <a href="https://www.instagram.com/nvnz_fa/" target="_blank"> @nvnz_fa </a>
+        <div class="projects-intro">
+          <p class="eyebrow">A COLLECTION OF MY WORK</p>
+          <h2>Made with passion,<br /><em>built with curiosity.</em></h2>
+          <p>Beberapa project yang pernah saya kerjakan selama belajar dan mengembangkan kemampuan.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ================= FOOTER ================= -->
+        <!-- PROJECT FILTER -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Works</button>
+          <button class="filter-btn" data-filter="mobile">Mobile App</button>
+          <button class="filter-btn" data-filter="design">UI/UX Design</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+        </div>
 
+        <div class="project-container">
+          <!-- PROJECT 1 -->
+          <article class="project-card project-large" data-category="mobile">
+            <div class="project-image">
+              <img src="img/notes-app.png" alt="Notes App" />
+              <span class="project-number">01</span>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <span class="project-category">MOBILE DEVELOPMENT</span>
+                <h3>Notes App</h3>
+              </div>
+
+              <p>Aplikasi catatan berbasis Flutter dengan fitur tambah, tampil, edit, dan hapus catatan. Menggunakan Hive untuk penyimpanan data lokal.</p>
+
+              <span class="project-tech">FLUTTER · DART · HIVE</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card project-small" data-category="design">
+            <div class="project-image">
+              <img src="img/figma.png" alt="UI UX Design Figma" />
+              <span class="project-number">02</span>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <span class="project-category">UI / UX DESIGN</span>
+                <h3>Figma Design</h3>
+              </div>
+
+              <p>Perancangan antarmuka aplikasi menggunakan Figma, mulai dari komponen, variants, hingga prototype interaktif.</p>
+
+              <span class="project-tech">FIGMA · PROTOTYPING</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project-card project-small" data-category="web">
+            <div class="project-image">
+              <img src="img/aplikasi-kasir.png" alt="Aplikasi Kasir" />
+              <span class="project-number">03</span>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <span class="project-category">WEB DEVELOPMENT</span>
+                <h3>Aplikasi Kasir</h3>
+              </div>
+
+              <p>Project aplikasi kasir untuk membantu pengelolaan data dan pencatatan transaksi agar lebih mudah dan terorganisir.</p>
+
+              <span class="project-tech">WEB · DATABASE</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 4 -->
+          <article class="project-card project-large" data-category="mobile">
+            <div class="project-image">
+              <img src="img/news-reader.png" alt="News Reader App" />
+              <span class="project-number">04</span>
+            </div>
+
+            <div class="project-info">
+              <div>
+                <span class="project-category">MOBILE DEVELOPMENT</span>
+                <h3>News Reader App</h3>
+              </div>
+
+              <p>Aplikasi berita luar angkasa menggunakan Flutter dengan fitur pencarian artikel, detail berita, dan bookmark untuk menyimpan berita favorit.</p>
+
+              <span class="project-tech">FLUTTER · PROVIDER · REST API</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-footer">
+          <span>MORE IDEAS, MORE THINGS TO BUILD.</span>
+          <span>✳</span>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section id="contact" class="contact">
+        <div class="section-heading">
+          <span class="section-number">04 / GET IN TOUCH</span>
+          <span class="heading-decoration">♡</span>
+        </div>
+
+        <div class="contact-content">
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2>Have a nice<br /><em>day ahead!</em></h2>
+          <p class="contact-description">Punya pertanyaan atau ingin menghubungi saya? Kirim pesan melalui form di bawah ini.</p>
+
+          <form id="contactForm" class="contact-form">
+            <label for="contactName">Nama</label>
+            <input type="text" id="contactName" name="nama" placeholder="Masukkan nama kamu" required />
+
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="Masukkan email kamu" required />
+
+            <label for="contactMessage">Pesan</label>
+            <textarea id="contactMessage" name="pesan" rows="5" placeholder="Tulis pesan kamu..." required></textarea>
+
+            <!-- Anti-spam field: biarkan kosong -->
+            <input type="text" name="website" class="form-trap" tabindex="-1" autocomplete="off" />
+
+            <button type="submit" id="sendMessageBtn" class="btn">
+              Kirim Pesan
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <p id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-links">
+            <a href="https://wa.me/6287861520780" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp</span>
+              <small>087861520780</small>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <a href="https://www.instagram.com/nvnz_fa/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+              <small>@nvnz_fa</small>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-decoration">THANK YOU FOR VISITING ✳</div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-      <p>© 2026 Naffa Verlita. All Rights Reserved.</p>
+      <a href="#home" class="footer-logo">naffa.</a>
+      <p>© 2026 Naffa Verlita. Made with creativity and curiosity.</p>
+      <a href="#home" class="back-top">BACK TO TOP ↑</a>
     </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
   </body>
 </html>
