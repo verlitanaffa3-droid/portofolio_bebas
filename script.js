@@ -161,3 +161,57 @@ if (contactForm && formStatus && sendMessageBtn) {
       });
   });
 }
+
+
+/* =================================
+   PROJECT IMAGE LIGHTBOX
+================================= */
+
+const lightbox = document.createElement("div");
+lightbox.className = "image-lightbox";
+
+lightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="Tutup">&times;</button>
+  <img src="" alt="Project Preview">
+`;
+
+document.body.appendChild(lightbox);
+
+const lightboxImage = lightbox.querySelector("img");
+const closeLightbox = lightbox.querySelector(".lightbox-close");
+
+// Klik gambar project
+document.querySelector(".project-container").addEventListener("click", (e) => {
+    const image = e.target.closest(".project-image img");
+
+    if (!image) return;
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+});
+
+// Tutup preview
+function hideLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+// Tombol X
+closeLightbox.addEventListener("click", hideLightbox);
+
+// Klik area luar gambar
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        hideLightbox();
+    }
+});
+
+// Tombol Escape
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        hideLightbox();
+    }
+});
