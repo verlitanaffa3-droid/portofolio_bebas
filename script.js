@@ -1,7 +1,9 @@
-// GANTI DENGAN URL WEB APP YANG SUDAH KAMU SALIN
+// GOOGLE APPS SCRIPT URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzo8OFIzBzLa129x7x3L0AfD6O1ksuAK7t2-KH2T5HV4qJQx3w-_WL19PTdm_x1h-1h/exec";
 
+// ==============================
 // MOBILE MENU
+// ==============================
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -22,7 +24,9 @@ if (menuToggle && navMenu) {
   });
 }
 
+// ==============================
 // ACTIVE NAVBAR
+// ==============================
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -43,7 +47,9 @@ function updateActiveMenu() {
 window.addEventListener("scroll", updateActiveMenu);
 updateActiveMenu();
 
+// ==============================
 // PROJECT FILTER
+// ==============================
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
@@ -62,7 +68,9 @@ filterButtons.forEach((button) => {
   });
 });
 
+// ==============================
 // SCROLL REVEAL
+// ==============================
 const revealElements = document.querySelectorAll(".home-text, .home-image, .section-heading, " + ".about-title, .about-description, .skill-item, " + ".skills-intro, .projects-intro, .project-card, " + ".contact-content");
 
 if ("IntersectionObserver" in window) {
@@ -83,10 +91,14 @@ if ("IntersectionObserver" in window) {
     observer.observe(element);
   });
 } else {
-  revealElements.forEach((element) => element.classList.add("show"));
+  revealElements.forEach((element) => {
+    element.classList.add("show");
+  });
 }
 
+// ==============================
 // BACK TO TOP
+// ==============================
 const backToTop = document.createElement("button");
 
 backToTop.className = "back-to-top";
@@ -106,19 +118,16 @@ backToTop.addEventListener("click", () => {
   });
 });
 
+// ==============================
 // CONTACT FORM - GOOGLE SPREADSHEET
+// ==============================
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 const sendMessageBtn = document.getElementById("sendMessageBtn");
 
-if (contactForm) {
-  contactForm.addEventListener("submit", async (event) => {
+if (contactForm && formStatus && sendMessageBtn) {
+  contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    if (GOOGLE_SCRIPT_URL === "TEMPEL_URL_KAMU_DI_SINI") {
-      formStatus.textContent = "URL Google Apps Script belum dipasang.";
-      return;
-    }
 
     const formData = new FormData(contactForm);
 
@@ -126,30 +135,29 @@ if (contactForm) {
     if (formData.get("website")) return;
 
     sendMessageBtn.disabled = true;
-    sendMessageBtn.textContent = "Mengirim pesan...";
+    sendMessageBtn.innerHTML = "Mengirim pesan...";
     formStatus.textContent = "Sedang mengirim pesan...";
 
-    const data = new URLSearchParams();
-    data.append("nama", formData.get("nama"));
-    data.append("email", formData.get("email"));
-    data.append("pesan", formData.get("pesan"));
-    data.append("website", "");
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: data,
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        if (result.trim() === "Berhasil") {
+          formStatus.textContent = "Pesan berhasil dikirim!";
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "Pesan belum berhasil disimpan. Coba lagi.";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        formStatus.textContent = "Gagal mengirim pesan. Periksa koneksi internet.";
+      })
+      .finally(() => {
+        sendMessageBtn.disabled = false;
+        sendMessageBtn.innerHTML = 'Kirim Pesan <i class="fa-solid fa-paper-plane"></i>';
       });
-
-      contactForm.reset();
-
-      formStatus.textContent = "Permintaan terkirim.";
-    } catch (error) {
-      formStatus.textContent = "Gagal mengirim pesan. Periksa koneksi internet kamu.";
-    } finally {
-      sendMessageBtn.disabled = false;
-      sendMessageBtn.innerHTML = 'Kirim Pesan <i class="fa-solid fa-paper-plane"></i>';
-    }
   });
 }
